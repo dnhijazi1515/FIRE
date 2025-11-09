@@ -18,20 +18,20 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     EditText em,pass;
-
+    FirebaseAuth auth;
     Button btnsign,btnlog;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FirebaseAuth auth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_main);
-
+        auth = FirebaseAuth.getInstance();
         em=findViewById(R.id.email);
         pass=findViewById(R.id.password);
         btnlog=findViewById(R.id.log);

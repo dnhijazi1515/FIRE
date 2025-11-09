@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -26,8 +27,9 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
         FirebaseApp.initializeApp(this);
+        setContentView(R.layout.activity_main3);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
         btn=findViewById(R.id.addbtn);
         name=findViewById(R.id.na);
         add=findViewById(R.id.addr);
